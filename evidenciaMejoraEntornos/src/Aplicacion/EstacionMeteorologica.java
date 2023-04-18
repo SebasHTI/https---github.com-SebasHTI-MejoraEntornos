@@ -6,12 +6,11 @@ import java.util.List;
 public class EstacionMeteorologica {
 
 	private List<Double> listadoTemperaturas;
-	
-	
-	public EstacionMeteorologica() {
-		listadoTemperaturas = new ArrayList<>();
-	}
-	
+	/**
+	 * Se añaden las temperaturas a la funcion
+	 * @param temperatura
+	 * @throws Exception
+	 */
 	public void addTemperatura(Double temperatura) throws Exception {	
 		if(temperatura < -75 || temperatura > 75) {
 			throw new Exception("Temperatura incorrecta");
@@ -19,7 +18,11 @@ public class EstacionMeteorologica {
 			listadoTemperaturas.add(temperatura);
 		}
 	}
-	
+	/**
+	 * Se calcula la media que tiene las temperaturas ena funcion
+	 * @return total
+	 * @throws Exception
+	 */
 	public Double mediaTemperaturas() throws Exception {
 		if(listadoTemperaturas.isEmpty()) {
 			throw new Exception("No hay temperaturas");
@@ -32,6 +35,11 @@ public class EstacionMeteorologica {
 		}
 	}
 	
+	/**
+	 * Se calcula la temperatura maxima que tiene en la funcion
+	 * @return maximo
+	 * @throws Exception
+	 */
 	public Double temperaturaMaxima() throws Exception {
 		if(listadoTemperaturas.isEmpty()) {
 			throw new Exception("No hay temperaturas");
